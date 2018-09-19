@@ -22,12 +22,39 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[
-    a4paper,          % Tamanho da folha A4
-    12pt,             % Tamanho da fonte 12pt
-    chapter=TITLE,    % Todos os capitulos devem ter caixa alta
-    section=TITLE,    % Todas as secoes devem ter caixa alta
-    oneside,          % Usada para impressao em apenas uma face do papel
-    english,          % Hifenizacoes em ingles
-    spanish,          % Hifenizacoes em espanhol
-    brazil            % último idioma é o idioma padrao do documento
+    % -- opções da classe memoir --
+    a4paper,                % Tamanho do papel
+    12pt,                   % Tamanho da fonte
+    oneside,                % Usada para impressão em apenas uma face do papel / twoside
+    % -- opções da classe abntex2 --
+    chapter=TITLE,          % Todos os capítulos devem ter caixa alta
+    section=Title,          % Todas as seções devem ter caixa alta
+    %subsection=TITLE,      % títulos de subseções convertidos em letras maiúsculas
+	%subsubsection=TITLE,   % títulos de sub-subseções convertidos em letras maiúsculas
+	% -- opções do pacote babel --
+    english,                % Hifenizações em inglês
+    spanish,                % Hifenizações em espanhol
+    brazil                  % Idioma padrão do documento
 ]{abntex2}
+
+% Importações de pacotes - Básicos
+\usepackage{lmodern}			% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+
+% Importações de pacotes - Canônicos abnTeX2
+\usepackage{lipsum}				% Geração de dummy text
+
+% Importações de pacotes - Citações
+\usepackage[brazilian,hyperpageref]{backref}    % Paginas com as citações
+\usepackage[alf]{abntex2cite}	                % Citações padrão ABNT
+
+% Importações de pacotes - Fametro
+\usepackage{lib/pifametrotex2}           % Formato da Fametro
+
+% Importações de pacotes - Fametro Comandos
+\usepackage{lib/commands/imprimircapa}

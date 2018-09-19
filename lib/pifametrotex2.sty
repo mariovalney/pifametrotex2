@@ -1,0 +1,87 @@
+% !TeX encoding = UTF-8
+% !TeX root = ../documento.tex
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Customizações do abnTeX2 (https://www.abntex.net.br/)              %%
+%% para os Projetos Integradores da Fametro                           %%
+%%                                                                    %%
+%% This work may be distributed and/or modified under the             %%
+%% conditions of the LaTeX Project Public License, either version 1.3 %%
+%% of this license or (at your option) any later version.             %%
+%% The latest version of this license is in                           %%
+%%   http://www.latex-project.org/lppl.txt                            %%
+%% and version 1.3 or later is part of all distributions of LaTeX     %%
+%% version 2005/12/01 or later.                                       %%
+%%                                                                    %%
+%% This work has the LPPL maintenance status `maintained'.            %%
+%%                                                                    %%
+%% The Current Maintainer of this work is Mário Valney                %%
+%%                                                                    %%
+%% Project available on: https://github.com/mariovalnet/pifametrotex2 %%
+%%                                                                    %%
+%% Further information about abnTeX2                                  %%
+%% are available on https://www.abntex.net.br/                        %%
+%%                                                                    %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Se você quer ver as margens do documento no PDF, remova o comentário dessa linha:
+% \usepackage[showframe, pass]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%       Formatação das Páginas        %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Define o espaço entre linhas para 1.5 cm
+%\OnehalfSpacing	Bug no ABNTEX2?
+\renewcommand{\baselinestretch}{1.5}
+
+% Define as margens do documento
+\setlrmarginsandblock{3cm}{2cm}{*} % externa / interna
+\setulmarginsandblock{3cm}{2cm}{*} % superior / inferior
+\checkandfixthelayout
+
+% Espacamentos nos titulos - chapter
+\setlength{\beforechapskip}{-\onelineskip} % com 0 nao funcionou
+\setlength{\afterchapskip}{\onelineskip} % antes do titulo de capitulo
+%\setlength\beforechapskip{-18pt}
+%\setlength{\afterchapskip}{2cm}
+
+% Espacamentos nos titulos - section
+%\setbeforesecskip{\onelineskip}
+\setbeforesecskip{18pt}
+\setaftersecskip{\onelineskip}
+
+% Espacamentos nos titulos - subsection
+\setbeforesubsecskip{\onelineskip}
+\setaftersubsecskip{\onelineskip}
+
+% Espacamentos nos titulos - subsubsection
+\setbeforesubsubsecskip{\onelineskip}
+\setaftersubsubsecskip{\onelineskip}
+
+% Espacamentos nos titulos - subsubsubsection
+\setbeforeparaskip{\onelineskip}
+\setafterparaskip{\onelineskip}
+
+% Define a distância da margem esquerda do parágrafo
+\setlength{\parindent}{2cm}
+
+% Estilo do chapter 1
+\renewcommand{\ABNTEXchapterfont}{\bfseries}
+\renewcommand{\ABNTEXchapterfontsize}{\normalsize}
+
+% Estilo da section 1.1
+\renewcommand{\ABNTEXsectionfont}{\normalfont}
+\renewcommand{\ABNTEXsectionfontsize}{\normalsize}
+
+% Estilo da subsection 1.1.1
+\renewcommand{\ABNTEXsubsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
+
+% Estilo da subsection 1.1.1.1
+\renewcommand{\ABNTEXsubsubsectionfont}{\normalfont}
+\renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
+
+% Estilo da subsection 1.1.1.1
+\renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\itshape}
+\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}

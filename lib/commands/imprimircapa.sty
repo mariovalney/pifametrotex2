@@ -1,0 +1,29 @@
+\renewcommand{\imprimircapa}{%
+	% Toda capa deve ter pagina 0
+	\setcounter{page}{0}
+	
+	\begin{capa}%
+		% Todos os elementos da capa devem esta centralizado
+		\center
+		
+		% Todos os elementos da capa devem esta em negrito
+		\bfseries
+
+        \includegraphics[height=2.5cm]{assets/logo-fametro.png} \\
+        \vspace{0.1cm}
+		\MakeUppercase{\capaIes} \\
+		\MakeUppercase{\capaCurso} \\
+
+		\vspace{3cm}
+
+		\MakeUppercase{\imprimirautor}
+		
+		\vspace{5cm}
+		
+		\MakeUppercase{\imprimirtitulo}
+		
+		\vfill
+		\normalsize\MakeUppercase\imprimirlocal\par	
+		\normalsize\imprimirdata
+	\end{capa}%	
+}
