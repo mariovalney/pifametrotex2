@@ -38,7 +38,8 @@
 ]{abntex2}
 
 % Importações de pacotes - Básicos
-\usepackage{lmodern}			% Usa a fonte Latin Modern			
+% \usepackage{lmodern}			% Usa a fonte Latin Modern		
+\usepackage{mathptmx}                               % Usa a fonte Times New Roman
 \usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
 \usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
 \usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
@@ -51,7 +52,20 @@
 
 % Importações de pacotes - Citações
 \usepackage[brazilian,hyperpageref]{backref}    % Paginas com as citações
-\usepackage[alf]{abntex2cite}	                % Citações padrão ABNT
+\usepackage[alf, abnt-emphasize=bf, bibjustif, recuo=0cm, abnt-etal-cite=3, abnt-etal-list=0,abnt-etal-text=it]{abntex2cite}	                % Citações padrão ABNT
+
+% Importações de pacotes - Misc
+\usepackage{amsfonts, amssymb, amsmath}             % Fonte e símbolos matemáticos
+\usepackage{booktabs}                               % Comandos para tabelas
+\usepackage{verbatim}                               % Texto é interpretado como escrito no documento
+\usepackage{multirow, array}                        % Múltiplas linhas e colunas em tabelas
+\usepackage{indentfirst}                            % Identa o primeiro parágrafo de cada seção.
+\usepackage{listings}                               % Utilizar código fonte no documento
+\usepackage{microtype}                              % Para melhorias de justificação?
+\usepackage{tocloft}                                % Permite alterar a formatação do Sumário
+\usepackage{etoolbox}                               % Usado para alterar a fonte da Section no Sumário
+% \usepackage[nogroupskip,nonumberlist,acronym]{glossaries}   % Permite fazer o glossario
+\usepackage{caption}                                % Altera o comportamento da tag caption
 
 % Importações de pacotes - Fametro
 \usepackage{lib/pifametrotex2}           % Formato da Fametro
