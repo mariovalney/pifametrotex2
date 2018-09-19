@@ -29,7 +29,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  Variáveis                      %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{variables/capa}
+\input{lib/variables}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Informações do Trabalho             %%
@@ -39,6 +39,10 @@
 \titulo{Título do Trabalho}
 \data{2018.2}
 \local{Fortaleza - Ceará}
+
+\preambulo{
+    Relatório apresentado a disciplina Projeto Integrador \numeroDoPi\, do curso de \capaCursoLinhaDois\ da \iesNome\ - \iesSigla\ - como requisito parcial para aprovação na disciplina, sob a orientação do \folhaOrientador.
+}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Magic                      %%
@@ -51,5 +55,8 @@
     
     % Capa
     \imprimircapa
+    
+    % Folha de Rosto
+    \imprimirfolhaderosto{}
 
 \end{document}
