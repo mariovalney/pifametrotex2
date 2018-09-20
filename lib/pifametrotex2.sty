@@ -71,20 +71,16 @@
 \renewcommand{\ABNTEXchapterfontsize}{\normalsize}
 
 % Estilo da section 1.1
-\renewcommand{\ABNTEXsectionfont}{\normalfont}
+\renewcommand{\ABNTEXsectionfont}{\bfseries}
 \renewcommand{\ABNTEXsectionfontsize}{\normalsize}
 
 % Estilo da subsection 1.1.1
-\renewcommand{\ABNTEXsubsectionfont}{\bfseries}
+\renewcommand{\ABNTEXsubsectionfont}{\normalfont\itshape}
 \renewcommand{\ABNTEXsubsectionfontsize}{\normalsize}
 
 % Estilo da subsection 1.1.1.1
 \renewcommand{\ABNTEXsubsubsectionfont}{\normalfont}
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
-
-% Estilo da subsection 1.1.1.1
-\renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont\itshape}
-\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
 
 % Margen da legenda da figura e da tabela
 \captionsetup{
@@ -198,3 +194,30 @@
 	\tableofcontents*
 	\cleardoublepage
 }
+
+%%%%%%%%%%%%%%% REFERÊNCIAS
+
+\newcommand{\imprimirreferencias}[1]{ %
+	\bibliography{#1} %
+	% TODO Por algum motivo, colocar esse comando antes da bibliografia faz com que o 
+	% ultimo capitulo dos elem fique sem o numero da pagina. 
+	\postextual %
+}
+
+%%%%%%%%%%%%%%% MISC
+
+\newcommand{\Caption}[1]{ %
+	\begin{Spacing}{1.5} %
+       	\caption{#1} %
+   	\end{Spacing} %
+}
+
+\newcommand{\Fonte}[2][\fontename]{ %
+%	\vspace{-3pt}
+	\vspace{8pt}
+ 		\fonte[\normalfont{#1}]{\normalfont{#2}}
+ 	\vspace{-5pt}
+}
+
+% Cria o comando para fazer notas e anotações na figura e na tabela
+\newcommand{\Nota}[2][\notaname]{\Fonte[#1]{#2}} 
