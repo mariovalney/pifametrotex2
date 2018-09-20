@@ -190,3 +190,11 @@
 		pdfborder = {0 0 0}
 	}
 }
+
+%%%%%%%%%%%%%%% SUMÁRIO
+
+\newcommand{\imprimirsumario}{ %
+	\pdfbookmark[0]{Sumário}{toc}
+	\tableofcontents*
+	\cleardoublepage
+}
