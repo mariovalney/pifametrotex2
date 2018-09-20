@@ -1,12 +1,12 @@
 O **PIFametroTeX2** é um projeto baseado no **abnTeX2** desenvolvido para auxiliar os alunos da Faculdade Metropolitana da Grande Fortaleza - FAMETRO a criarem seus relatórios para os Projetos Integradores sem se preocuparem com a formatação da ABNT.
 
-### Por onde começo?
+## Por onde começo?
 Para utilizar o **PIFametroTeX2** você precisa:
 
 1. Entender como funciona a abnTeX2 [clicando aqui](https://www.abntex.net.br/)
 2. Importar o modelo para a ferramenta que deseja. Estamos usando o [Overleaf](https://www.overleaf.com/), antigo ShareLaTeX.
 
-### Créditos
+## Créditos
 
 Criado por [Mário Valney](https://mariovalney.com/sobre).
 
