@@ -224,3 +224,21 @@
 \newcommand{\PIFFig}[3]{\IBGEtab{#1}{#2}{#3}}
 \newcommand{\PIFTab}[3]{\IBGEtab{#1}{#2}{#3}}
 \newcommand{\PIFQua}[3]{\IBGEtab{#1}{#2}{#3}}
+
+\newcommand{\Figura}[3]{
+    \begin{figure}[!ht]
+        \centering
+
+        \begin{minipage}{14cm}
+            \begin{flushright}
+                \Caption{#1}
+                \includegraphics[width=14cm]{content/figuras/#2}
+                \Fonte{#3}
+            \end{flushright}
+        \end{minipage}
+    \end{figure}
+}
+
+\newcommand{\MinhaFigura}[2]{
+    \Figura{#1}{#2}{Elaborado pelo autor}
+}
