@@ -30,29 +30,33 @@
     chapter=TITLE,          % Todos os capítulos devem ter caixa alta
     section=Title,          % Todas as seções devem ter caixa alta
     %subsection=TITLE,      % títulos de subseções convertidos em letras maiúsculas
-	%subsubsection=TITLE,   % títulos de sub-subseções convertidos em letras maiúsculas
-	% -- opções do pacote babel --
+    %subsubsection=TITLE,   % títulos de sub-subseções convertidos em letras maiúsculas
+    % -- opções do pacote babel --
     english,                % Hifenizações em inglês
     spanish,                % Hifenizações em espanhol
     brazil                  % Idioma padrão do documento
 ]{abntex2}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%              Pacotes                %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Importações de pacotes - Básicos
-% \usepackage{lmodern}			% Usa a fonte Latin Modern		
+% \usepackage{lmodern}          % Usa a fonte Latin Modern
 \usepackage{mathptmx}           % Usa a fonte Times New Roman
-\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
-\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
-\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
-\usepackage{color}				% Controle das cores
-\usepackage{graphicx}			% Inclusão de gráficos
-\usepackage{microtype} 			% para melhorias de justificação
+\usepackage[T1]{fontenc}        % Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}     % Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}        % Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}              % Controle das cores
+\usepackage{graphicx}           % Inclusão de gráficos
+\usepackage{microtype}          % para melhorias de justificação
 
 % Importações de pacotes - Canônicos abnTeX2
-\usepackage{lipsum}				% Geração de dummy text
+\usepackage{lipsum}             % Geração de dummy text
 
 % Importações de pacotes - Citações
-\usepackage[brazilian,hyperpageref]{backref}    % Paginas com as citações
-\usepackage[alf, abnt-emphasize=bf, bibjustif, recuo=0cm, abnt-etal-cite=3, abnt-etal-list=0,abnt-etal-text=it]{abntex2cite}	                % Citações padrão ABNT
+\usepackage[brazilian,hyperpageref]{backref}                                                                                % Paginas com as citações
+\usepackage[alf,abnt-emphasize=bf,bibjustif,recuo=0cm,abnt-etal-cite=3,abnt-etal-list=0,abnt-etal-text=it]{abntex2cite}     % Citações padrão ABNT
 
 % Importações de pacotes - Misc
 \usepackage{amsfonts, amssymb, amsmath}             % Fonte e símbolos matemáticos
@@ -65,6 +69,14 @@
 \usepackage{etoolbox}                               % Usado para alterar a fonte da Section no Sumário
 % \usepackage[nogroupskip,nonumberlist,acronym]{glossaries}   % Permite fazer o glossario
 \usepackage{caption}                                % Altera o comportamento da tag caption
+\usepackage{ifthen}                                 % Inclui condicionais
 
 % Importações de pacotes - Fametro
-\usepackage{lib/pifametrotex2}           % Formato da Fametro
+\usepackage{lib/pifametrotex2}          % Formato da Fametro
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%           Configurações             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Margen da legenda da figura e da tabela
+\captionsetup{justification=raggedright,singlelinecheck=false,skip=0pt}

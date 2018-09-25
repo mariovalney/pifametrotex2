@@ -27,9 +27,27 @@
 \input{lib/main}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%                  Variáveis                      %%
+%%          Informação sobre a IES                 %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{lib/variables}
+
+\def \iesNome {Faculdade Metropolitana da Grande Fortaleza}
+\def \iesSigla {FAMETRO}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%          Informação sobre o  Curso              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def \numeroDoPi {II}
+\def \professorNome {Nome do Professor}
+\def \nomeDoCurso {Análise e Desenvolvimento de Sistemas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%          Informação para a Capa                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def \capaCursoLinhaUm {Curso de Gradução Tecnológica em}
+\def \capaCursoLinhaDois {\nomeDoCurso}
+\def \folhaOrientador {prof.º \professorNome}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%             Informações do Trabalho             %%
@@ -41,7 +59,7 @@
 \local{Fortaleza - Ceará}
 
 \preambulo{
-    Relatório apresentado a disciplina Projeto Integrador \numeroDoPi\, do curso de \capaCursoLinhaDois\ da \iesNome\ - \iesSigla\ - como requisito parcial para aprovação na disciplina, sob a orientação do \folhaOrientador.
+    Relatório apresentado a disciplina Projeto Integrador \numeroDoPi\, do curso de \nomeDoCurso\ da \iesNome\ - \iesSigla\ - como requisito parcial para aprovação na disciplina, sob a orientação do \folhaOrientador.
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -52,25 +70,25 @@
 
 \begin{document}
     \selectlanguage{brazil}
-    
+
     % Capa
     \imprimircapa
-    
+
     % Folha de Rosto
     \imprimirfolhaderosto{}
-    
+
     % Resumo
     \imprimirresumo{content/pre-textuais/resumo}
-    
+
     % Sumário
     \imprimirsumario
-    
+
     % Conteúdo
     \textual
     \input{content/textuais/introducao}
     \input{content/textuais/objetivos}
     \input{content/textuais/exemplo}
-    
+
     % Referências
     \imprimirreferencias{content/pos-textuais/referencias}
 

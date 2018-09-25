@@ -32,7 +32,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Define o espaço entre linhas para 1.5 cm
-%\OnehalfSpacing	Bug no ABNTEX2?
+%\OnehalfSpacing    Bug no ABNTEX2?
 \renewcommand{\baselinestretch}{1.5}
 
 % Define as margens do documento
@@ -82,14 +82,6 @@
 \renewcommand{\ABNTEXsubsubsectionfont}{\normalfont}
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
 
-% Margen da legenda da figura e da tabela
-\captionsetup{
-	justification=centering,% Centraliza o caption
-	skip=0pt,                %Retira o espaco entre a figura/tabela e o caption
-	labelfont=bf, % A palavra 'Figure 1' agora eh negrito
-	font=bf	% O texto depois de 'Figure 1' agora eh negrito
-}
-
 % Os items da lista de figura agora sao negritos
 \renewcommand{\cftfigurefont}{\bfseries}
 
@@ -100,37 +92,40 @@
 %%              Comandos               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%% CAPA 
+%%%%%%%%%%%%%%% CAPA
 
 \renewcommand{\imprimircapa}{%
-	% Toda capa deve ter pagina 0
-	\setcounter{page}{0}
-	
-	\begin{capa}%
-		% Todos os elementos da capa devem esta centralizado
-		\center
-		
-		% Todos os elementos da capa devem esta em negrito
-		\bfseries
+    % Toda capa deve ter pagina 0
+    \setcounter{page}{0}
+
+    \begin{capa}%
+        % Todos os elementos da capa devem esta centralizado
+        \center
+
+        % Todos os elementos da capa devem esta em negrito
+        \bfseries
 
         \includegraphics[width=5cm]{assets/logo-fametro.png} \\
         \vspace{0.1cm}
-		\MakeUppercase{\iesNome} \\
-		\MakeUppercase{\capaCursoLinhaUm} \\
-		\MakeUppercase{\capaCursoLinhaDois} \\
+        \MakeUppercase{\iesNome} \\
+        \MakeUppercase{\capaCursoLinhaUm} \\
+        \MakeUppercase{\capaCursoLinhaDois} \\
 
-		\vspace{3cm}
+        \vspace{3cm}
 
-		\MakeUppercase{\imprimirautor}
-		
-		\vspace{5cm}
-		
-		\MakeUppercase{\imprimirtitulo}
-		
-		\vfill
-		\normalsize\MakeUppercase\imprimirlocal\par	
-		\normalsize\imprimirdata
-	\end{capa}%	
+        \MakeUppercase{\imprimirautor}
+
+        \vspace{5cm}
+
+        \begin{minipage}{12cm}
+            \center
+            \MakeUppercase{\imprimirtitulo}
+        \end{minipage}
+
+        \vfill
+        \normalsize\MakeUppercase\imprimirlocal\par
+        \normalsize\imprimirdata
+    \end{capa}%
 }
 
 %%%%%%%%%%%%%%% FOLHA DE ROSTO
@@ -138,31 +133,35 @@
 \makeatletter
 \renewcommand{\folhaderostocontent}{%
     \begin{center}
-		\normalsize\MakeUppercase\imprimirautor\par
-		\vspace{6.5cm}
-		\normalsize\MakeUppercase\imprimirtitulo\par
-	\end{center}
-	
-	\vspace{2.5cm}
-	
-	%Retira o espaço do parágrafo
-	\hspace*{-2cm}
-	
-	%Adiciona o espaço da margem
-	\hspace*{8cm}	
-	
-	\raggedleft
-	
-	\begin{minipage}{8cm}
-		\begin{SingleSpace}
-		    \imprimirpreambulo
-		\end{SingleSpace}		
-	\end{minipage}
-	
-	\vfill
-	\centering
-	\normalsize\MakeUppercase\imprimirlocal\par	
-	\normalsize\imprimirdata
+        \normalsize\MakeUppercase\imprimirautor\par
+        \vspace{6.5cm}
+
+        \begin{minipage}{12cm}
+            \center
+            \normalsize\MakeUppercase\imprimirtitulo\par
+        \end{minipage}
+    \end{center}
+
+    \vspace{2.5cm}
+
+    %Retira o espaço do parágrafo
+    \hspace*{-2cm}
+
+    %Adiciona o espaço da margem
+    \hspace*{8cm}
+
+    \raggedleft
+
+    \begin{minipage}{8cm}
+        \begin{SingleSpace}
+            \imprimirpreambulo
+        \end{SingleSpace}
+    \end{minipage}
+
+    \vfill
+    \centering
+    \normalsize\MakeUppercase\imprimirlocal\par
+    \normalsize\imprimirdata
 }
 \makeatother
 
@@ -174,50 +173,54 @@
 }
 
 \newcommand{\imprimirresumo}[1]{
-	\begin{resumo}[Resumo] %
-		{\fixindent\input{#1}}
-	\end{resumo}
+    \begin{resumo}[Resumo] %
+        {\fixindent\input{#1}}
+    \end{resumo}
 }
 
 \newcommand{\palavraschave}[1]{
-	\vspace{\onelineskip} 
-	\noindent Palavras-chave: #1
-	\hypersetup{%
-		pdfborder = {0 0 0}
-	}
+    \vspace{\onelineskip}
+    \noindent Palavras-chave: #1
+    \hypersetup{%
+        pdfborder = {0 0 0}
+    }
 }
 
 %%%%%%%%%%%%%%% SUMÁRIO
 
 \newcommand{\imprimirsumario}{ %
-	\pdfbookmark[0]{Sumário}{toc}
-	\tableofcontents*
-	\cleardoublepage
+    \pdfbookmark[0]{Sumário}{toc}
+    \tableofcontents*
+    \cleardoublepage
 }
 
 %%%%%%%%%%%%%%% REFERÊNCIAS
 
 \newcommand{\imprimirreferencias}[1]{ %
-	\bibliography{#1} %
-	% TODO Por algum motivo, colocar esse comando antes da bibliografia faz com que o 
-	% ultimo capitulo dos elem fique sem o numero da pagina. 
-	\postextual %
+    \bibliography{#1} %
+    % TODO Por algum motivo, colocar esse comando antes da bibliografia faz com que o
+    % ultimo capitulo dos elem fique sem o numero da pagina.
+    \postextual %
 }
 
 %%%%%%%%%%%%%%% MISC
 
 \newcommand{\Caption}[1]{ %
-	\begin{Spacing}{1.5} %
-       	\caption{#1} %
-   	\end{Spacing} %
+    \begin{Spacing}{1.5} %
+        \caption{#1} %
+    \end{Spacing} %
 }
 
 \newcommand{\Fonte}[2][\fontename]{ %
-%	\vspace{-3pt}
-	\vspace{8pt}
- 		\fonte[\normalfont{#1}]{\normalfont{#2}}
- 	\vspace{-5pt}
+    \vspace{-5pt}
+        \fonte[\normalfont{#1}]{\normalfont{#2}}
+    \vspace{-5pt}
 }
 
 % Cria o comando para fazer notas e anotações na figura e na tabela
-\newcommand{\Nota}[2][\notaname]{\Fonte[#1]{#2}} 
+\newcommand{\Nota}[2][\notaname]{\Fonte[#1]{#2}}
+
+% Comandos para inserir figuras, tabelas e quadros
+\newcommand{\PIFFig}[3]{\IBGEtab{#1}{#2}{#3}}
+\newcommand{\PIFTab}[3]{\IBGEtab{#1}{#2}{#3}}
+\newcommand{\PIFQua}[3]{\IBGEtab{#1}{#2}{#3}}
