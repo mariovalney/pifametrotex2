@@ -82,11 +82,30 @@
 \renewcommand{\ABNTEXsubsubsectionfont}{\normalfont}
 \renewcommand{\ABNTEXsubsubsectionfontsize}{\normalsize}
 
+% Estilo da subsection 1.1.1.1.1
+\renewcommand{\ABNTEXsubsubsubsectionfont}{\normalfont}
+\renewcommand{\ABNTEXsubsubsubsectionfontsize}{\normalsize}
+
+\setsubsubsubsecheadstyle{
+    \setlength{\parindent}{0cm}
+    \normalfont\ABNTEXsubsubsubsectionfontsize\underline
+}
+
 % Os items da lista de figura agora sao negritos
 \renewcommand{\cftfigurefont}{\bfseries}
 
 % Os items da lista de tabela e quadro agora sao negritos
 \renewcommand{\cfttablefont}{\bfseries}
+
+% Números das páginas
+\makepagestyle{abntheadings}
+\makeevenhead{abntheadings}{\ABNTEXfontereduzida\thepage}{}{\ABNTEXfontereduzida\textit}
+\makeoddhead{abntheadings}{}{}{\ABNTEXfontereduzida\thepage}
+%\makeheadrule{abntheadings}{}{}
+
+% Cabecalho do inicio do capitulo
+\makepagestyle{abntchapfirst}
+\makeoddhead{abntchapfirst}{}{}{\ABNTEXfontereduzida\thepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%              Comandos               %%
@@ -188,11 +207,47 @@
 
 %%%%%%%%%%%%%%% SUMÁRIO
 
+\renewcommand{\contentsname}{}
+
 \newcommand{\imprimirsumario}{ %
     \pdfbookmark[0]{Sumário}{toc}
     \tableofcontents*
     \cleardoublepage
 }
+
+% Modifica o espaçamento no sumário
+\setlength{\cftbeforeparagraphskip}{0pt}
+\setlength{\cftbeforesubsectionskip}{0pt}
+\setlength{\cftbeforesectionskip}{0pt}
+\setlength{\cftbeforesubsubsectionskip}{0pt}
+\setlength{\cftbeforechapterskip}{0pt}
+
+\renewcommand\cftchapterfont{\ABNTEXchapterfont}
+\renewcommand\cftsectionfont{\ABNTEXsectionfont}
+\renewcommand\cftsubsectionfont{\ABNTEXsubsectionfont}
+\renewcommand\cftsubsubsectionfont{\ABNTEXsubsubsectionfont}
+\renewcommand*{\cftparagraphfont}{\normalsize\normalfont\underline}
+
+% Formatação
+\renewcommand\cftchapterpagefont{\normalfont}
+\renewcommand\cftchapterpagefont{\normalfont}
+\renewcommand\cftsectionpagefont{\normalfont}
+\renewcommand\cftsubsectionpagefont{\normalfont}
+\renewcommand\cftsubsubsectionpagefont{\normalfont}
+\renewcommand\cftparagraphpagefont{\normalfont}
+
+\renewcommand\numberlinebox[2]{#2\enspace}
+\renewcommand\booknumberlinebox[2]{#2\enspace}
+\renewcommand\partnumberlinebox[2]{#2\enspace}
+\renewcommand\chapternumberlinebox[2]{#2\enspace}
+
+\setlength{\cftlastnumwidth}{0em}
+
+\renewcommand{\cftchapterleader}{\normalfont\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsectionleader}{\normalfont\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsectionleader}{\normalfont\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsectionleader}{\normalfont\cftdotfill{\cftdotsep}}
+\renewcommand{\cftparagraphleader}{\normalfont\cftdotfill{\cftdotsep}}
 
 %%%%%%%%%%%%%%% REFERÊNCIAS
 
@@ -245,5 +300,21 @@
 
 % Comando para marca d'água
 \newcommand{\printWatermark}{
-    \newwatermark[allpages,color=red!5,angle=45,scale=2]{RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHOs}
+    \newwatermark[allpages,color=red!5,angle=45,scale=2]{RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO RASCUNHO}
+}
+
+% Comando para formatar listas como HTML
+\newcommand{\lista}[1]{
+    \begin{alineas}
+        #1
+    \end{alineas}
+}
+
+% Comando para citar sites
+\newcommand{\citeurl}[1]{
+    (\citeauthor{#1}, \citeyear{#1}, online)\xspace
+}
+
+\newcommand{\citeautoronline}[1]{
+    \citeauthoronline{#1} (\citeyear{#1})\xspace
 }
