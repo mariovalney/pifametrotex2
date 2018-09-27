@@ -236,18 +236,21 @@
 \renewcommand\cftsubsubsectionpagefont{\normalfont}
 \renewcommand\cftparagraphpagefont{\normalfont}
 
+\renewcommand{\cftchapterleader}{\normalfont\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsectionleader}{\normalfont\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsectionleader}{\normalfont\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsectionleader}{\normalfont\cftdotfill{\cftdotsep}}
+\renewcommand{\cftparagraphleader}{\normalfont\cftdotfill{\cftdotsep}}
+
+% Note que o espaçamento entre números e seções é uma das demandas da Fametro que ferem a abntex2
+% Caso esteja usando em outro relatório ou a Fametro tenha removido essas especificações, comente as linhas abaixo.
+
 \renewcommand\numberlinebox[2]{#2\enspace}
 \renewcommand\booknumberlinebox[2]{#2\enspace}
 \renewcommand\partnumberlinebox[2]{#2\enspace}
 \renewcommand\chapternumberlinebox[2]{#2\enspace}
 
 \setlength{\cftlastnumwidth}{0em}
-
-\renewcommand{\cftchapterleader}{\normalfont\cftdotfill{\cftdotsep}}
-\renewcommand{\cftsectionleader}{\normalfont\cftdotfill{\cftdotsep}}
-\renewcommand{\cftsubsectionleader}{\normalfont\cftdotfill{\cftdotsep}}
-\renewcommand{\cftsubsubsectionleader}{\normalfont\cftdotfill{\cftdotsep}}
-\renewcommand{\cftparagraphleader}{\normalfont\cftdotfill{\cftdotsep}}
 
 %%%%%%%%%%%%%%% REFERÊNCIAS
 
