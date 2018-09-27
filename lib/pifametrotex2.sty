@@ -284,7 +284,7 @@
 \newcommand{\PIFQua}[3]{\IBGEtab{#1}{#2}{#3}}
 
 \newcommand{\Figura}[3]{
-    \begin{figure}[!ht]
+    \begin{figure}[!htb]
         \centering
 
         \begin{minipage}{14cm}
@@ -299,6 +299,11 @@
 
 \newcommand{\MinhaFigura}[2]{
     \Figura{#1}{#2}{Elaborado pelo autor}
+}
+
+\newcommand{\FiguraPagina}[3]{
+    \Figura{#1}{#2}{#3}
+    \clearpage
 }
 
 % Comando para marca d'água
