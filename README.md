@@ -6,6 +6,11 @@ Para utilizar o **PIFametroTeX2** você precisa:
 1. Entender como funciona a abnTeX2 [clicando aqui](https://www.abntex.net.br/)
 2. Importar o modelo para a ferramenta que deseja. Estamos usando o [Overleaf](https://www.overleaf.com/), antigo ShareLaTeX.
 
+## Tutorial
+Eu gravei um vídeo para o pessoal da minha turma: https://www.useloom.com/share/01b0b1b32f7f419c83dc02b6c45dc1fd
+
+Ficou um pouco longo e um pouco jogado, mas já facilita bastante para quem está começando agora.
+
 ## Créditos
 
 Criado por [Mário Valney](https://mariovalney.com/sobre).
